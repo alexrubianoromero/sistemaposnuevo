@@ -65,6 +65,7 @@ class dashboardView{
             <script src="../dashboard/js/dashboard.js"></script>
             <script src="../grupos/js/grupos.js"></script>
             <script src="../productos/js/productos.js"></script>
+            <script src="../opciones/js/grupos.js"></script>
         <?php
     }
 
@@ -102,9 +103,9 @@ class dashboardView{
                         <span class="icon icon-caja">💰</span>
                         Caja
                     </button>
-                    <button class="btn btn-primary me-2" onclick="menuOpciones();">
+                    <button class="btn btn-primary me-2" onclick="mostrarGrupos();">
                         <span class="icon icon-opciones">🔧</span>
-                        Opciones
+                        Grupos
                     </button>
                 </div>
 
