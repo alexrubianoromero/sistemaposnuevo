@@ -33,14 +33,15 @@ class dashboardView{
 
                 </style>    
             </head>
-            <body class="container div_principal_dashboard">
-                    <div id="div_barra_superior" class="row  bordeLinea">
+            <body class="container-fluid  div_principal_dashboard" style="height:100vh;padding-left: 20px;padding-right: 20px; background-color: #C0C0C0;">
+
+                    <div id="div_barra_superior" class="row  bordeLinea" style="height:5vh;">
                         <div class="col-12">
-                            Sistema Pos V1
+                            Sistema Pos  Kaymo V1
                         </div>
                     </div>
 
-                    <div class="row " > 
+                    <div class="row "  style="height:80vh;"> 
                         <div class="col-lg-2 bordeLinea" id="columna1Dashboard">
                             productos
                            
@@ -56,8 +57,11 @@ class dashboardView{
                         </div>
                     </div>
 
-                    <div class="row bordeLinea"  style="padding:10px;">
+                    <div class="row bordeLinea"  style="padding:10px;height:10vh;">
                         <?php  $this->botonesAbajo2(); ?>
+                    </div>
+                    <div class="row bordeLinea"  style="height:5vh; ">
+                        ultima linea
                     </div>
                 </div>
             </body>
@@ -65,7 +69,7 @@ class dashboardView{
             <script src="../dashboard/js/dashboard.js"></script>
             <script src="../grupos/js/grupos.js"></script>
             <script src="../productos/js/productos.js"></script>
-            <script src="../opciones/js/grupos.js"></script>
+            <script src="../grupos/js/grupos.js"></script>
         <?php
     }
 
@@ -84,27 +88,31 @@ class dashboardView{
                    
                 </style>
             </head>
-            <body>
+            <body style="background-color: #f0f0f0;">
 
                 <div class="">
-                    <button class="btn btn-primary me-2">
+                    <button class="btn btn-secondary me-2">
                         <span class="icon icon-system">⚙️</span>
                         Sistema
                     </button>
-                    <button class="btn btn-primary me-2">
+                    <button class="btn btn-secondary me-2">
                         <span class="icon icon-ficheros">📄</span>
                         Ficheros
                     </button>
-                    <button class="btn btn-primary me-2">
+                    <button class="btn btn-secondary me-2">
                         <span class="icon icon-list">📋</span>
                         List
                     </button>
-                    <button class="btn btn-primary me-2">
+                    <button class="btn btn-secondary me-2">
                         <span class="icon icon-caja">💰</span>
                         Caja
                     </button>
-                    <button class="btn btn-primary me-2" onclick="mostrarGrupos();">
+                    <button class="btn btn-secondary me-2" onclick="mostrarGrupos();">
                         <span class="icon icon-opciones">🔧</span>
+                        Grupos
+                    </button>
+                    <button class="btn btn-secondary me-2" onclick="menuMesas();">
+                        <span class="icon icon-opciones">M</span>
                         Grupos
                     </button>
                 </div>

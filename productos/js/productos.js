@@ -1,19 +1,17 @@
- 
- 
- function mostrarGrupos(){
-    // alert('idgrupo'+idGrupo);
+ function traerProductosIdGrupo(idGrupo){
+    // alert('idgrupo de producto'+idGrupo);
         const http=new XMLHttpRequest();
-        const url = '../grupos/grupos.php';
+        const url = '../productos/productos.php';
         http.onreadystatechange = function(){
             if(this.readyState == 4 && this.status ==200){
-                document.getElementById("columna1Dashboard").innerHTML = this.responseText;
+                document.getElementById("columncentral").innerHTML = this.responseText;
             }
         };
         
         http.open("POST",url);
         http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        http.send("opcion=mostrarGrupos"
-        // + "&idGrupo="+idGrupo
+        http.send("opcion=traerProductosIdGrupo"
+        + "&idGrupo="+idGrupo
         // + "&tipoMov=2"
         );
     }

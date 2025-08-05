@@ -22,7 +22,11 @@ class gruposView
         
         foreach($grupos as $grupo)
         {
-             echo '<br>'.$grupo['nombre'];
+         echo '<div>';
+         echo '<button class="btn btn-secondary mt-2 "   onclick="traerProductosIdGrupo('.$grupo["id"].')" > '; 
+         echo $grupo['nombre'];
+         echo '</div>';    
+         echo '</button>'; 
         } 
      
 

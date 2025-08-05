@@ -15,7 +15,7 @@ class gruposController
         // echo 'controlador de opciones';
         $this->view = new gruposView();
         $this->model = new GrupoModel();
-        $this->view->menuOpcionesGrupos();
+        // $this->view->menuOpcionesGrupos();
         if($_REQUEST['opcion']=='mostrarGrupos')
         {
               $this->view->mostrarGrupos(); 
