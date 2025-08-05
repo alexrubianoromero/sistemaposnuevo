@@ -60,7 +60,7 @@ class dashboardView{
                     <div class="row bordeLinea"  style="padding:10px;height:10vh;">
                         <?php  $this->botonesAbajo2(); ?>
                     </div>
-                    <div class="row bordeLinea"  style="height:5vh; ">
+                    <div class="row bordeLinea"  style="height:5vh; padding:2px;">
                         ultima linea
                     </div>
                 </div>
@@ -70,6 +70,8 @@ class dashboardView{
             <script src="../grupos/js/grupos.js"></script>
             <script src="../productos/js/productos.js"></script>
             <script src="../grupos/js/grupos.js"></script>
+            <script src="../sucursales/js/sucursales.js"></script>
+            <script src="../mesas/js/mesas.js"></script>
         <?php
     }
 
@@ -91,29 +93,37 @@ class dashboardView{
             <body style="background-color: #f0f0f0;">
 
                 <div class="">
-                    <button class="btn btn-secondary me-2">
+                    <button class="btn btn-secondary btn-sm me-2">
                         <span class="icon icon-system">⚙️</span>
                         Sistema
                     </button>
-                    <button class="btn btn-secondary me-2">
+                    <button class="btn btn-secondary btn-sm me-2">
                         <span class="icon icon-ficheros">📄</span>
                         Ficheros
                     </button>
-                    <button class="btn btn-secondary me-2">
+                    <button class="btn btn-secondary btn-sm me-2">
                         <span class="icon icon-list">📋</span>
                         List
                     </button>
-                    <button class="btn btn-secondary me-2">
+                    <button class="btn btn-secondary btn-sm me-2">
                         <span class="icon icon-caja">💰</span>
                         Caja
                     </button>
-                    <button class="btn btn-secondary me-2" onclick="mostrarGrupos();">
+                    <button class="btn btn-secondary btn-sm me-2" onclick="mostrarGrupos();">
                         <span class="icon icon-opciones">🔧</span>
                         Grupos
                     </button>
-                    <button class="btn btn-secondary me-2" onclick="menuMesas();">
+                    <button class="btn btn-secondary btn-sm me-2" onclick="mostrarSucursales();">
                         <span class="icon icon-opciones">M</span>
-                        Grupos
+                        Sucursales
+                    </button>
+                    <button class="btn btn-secondary btn-sm me-2" onclick="menuMesas();">
+                        <span class="icon icon-opciones">M</span>
+                        Mesas
+                    </button>
+                    <button class="btn btn-secondary btn-sm me-2" onclick="menuCuentas();">
+                        <span class="icon icon-opciones">Cuentas</span>
+                        Mesas
                     </button>
                 </div>
 

@@ -1,18 +1,17 @@
-mostrarMesasIdSUc
- function mostrarMesasIdSUc(idSuc){
+ function mostrarSucursales(){
     // alert('idgrupo de producto'+idGrupo);
         const http=new XMLHttpRequest();
-        const url = '../mesas/mesas.php';
+        const url = '../sucursales/sucursales.php';
         http.onreadystatechange = function(){
             if(this.readyState == 4 && this.status ==200){
-                document.getElementById("columncentral").innerHTML = this.responseText;
+                document.getElementById("columna1Dashboard").innerHTML = this.responseText;
             }
         };
         
         http.open("POST",url);
         http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        http.send("opcion=mostrarMesasIdSUc"
-        + "&idSuc="+idSuc
+        http.send("opcion=mostrarSucursales"
+        // + "&idGrupo="+idGrupo
         // + "&tipoMov=2"
         );
     }

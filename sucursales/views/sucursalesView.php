@@ -20,12 +20,13 @@ class sucursalesView
     {
         $sucursales =$this->model->traerSucursales(); 
         
-        foreach($sucursales as $grupo)
+        foreach($sucursales as $sucursal)
         {
          echo '<div>';
         //  echo '<button class="btn btn-secondary mt-2 "   onclick="traerProductosIdGrupo('.$grupo["id"].')" > '; 
-         echo '<button class="btn btn-secondary mt-2 " > '; 
-         echo $grupo['descripcion'];
+         echo '<button class="btn btn-secondary mt-2 " 
+                    onclick="mostrarMesasIdSUc('.$sucursal['id'].');"
+                >'.$sucursal['descripcion'].' </button>';
          echo '</div>';    
          echo '</button>'; 
         } 
