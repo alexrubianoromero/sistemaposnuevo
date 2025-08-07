@@ -22,7 +22,7 @@ class productoView
                 echo '<div class="col-lg-2 ms-2">'; 
                     echo '<button 
                     class="btn btn-secondary btn-lg mt-2"
-                    onclick="traerProductosIdGrupo('.$producto["id"].');"
+                    onclick="agregarProductoACuenta('.$producto['id'].');"
                     >'.$producto["descripcion"].'</button>';
                 echo '</div>';     
             }

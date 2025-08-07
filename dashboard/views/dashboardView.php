@@ -53,7 +53,9 @@ class dashboardView{
                         </div>
 
                         <div class="col-lg-3 bordeLinea">
-                            Contenido de la Columna Derecha
+                            <!-- Contenido de la Columna Derecha      -->
+                            <?php   $this->menuCuenta();    ?>
+
                         </div>
                     </div>
 
@@ -72,10 +74,27 @@ class dashboardView{
             <script src="../grupos/js/grupos.js"></script>
             <script src="../sucursales/js/sucursales.js"></script>
             <script src="../mesas/js/mesas.js"></script>
+            <script src="../cuentas/js/cuentas.js"></script>
         <?php
     }
 
- 
+    public function menuCuenta ()
+    {
+       ?>
+            <div id="cuenta" style="height:10hv;"  class=" row borderLinea">
+
+                <div class="d-grid gap-2">
+                    <button class="btn btn-secondary btn-lg"
+                    onclick ="alistarNuevaCuenta();"
+                    >Cuenta..</button>
+                </div>
+            </div>
+            <div id="divItemsCuenta"  style="height:20hv;" class="borderLinea">
+                    
+            </div>
+        
+        <?php
+    }
 
     public function botonesAbajo2()
     {
@@ -121,9 +140,9 @@ class dashboardView{
                         <span class="icon icon-opciones">M</span>
                         Mesas
                     </button>
-                    <button class="btn btn-secondary btn-sm me-2" onclick="menuCuentas();">
-                        <span class="icon icon-opciones">Cuentas</span>
-                        Mesas
+                    <button class="btn btn-secondary btn-sm me-2" onclick="listarCuentas();">
+                        <span class="icon icon-opciones">C</span>
+                        Cuentas
                     </button>
                 </div>
 

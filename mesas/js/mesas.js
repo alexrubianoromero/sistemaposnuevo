@@ -1,4 +1,3 @@
-mostrarMesasIdSUc
  function mostrarMesasIdSUc(idSuc){
     // alert('idgrupo de producto'+idGrupo);
         const http=new XMLHttpRequest();
