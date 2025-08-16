@@ -15,17 +15,23 @@ class itemsCuentasView
   public function listarItemsIdCuenta($items)
   {
     $total  = 0;
+    $noItem= 1;
      echo '<table>'; 
      foreach($items as $item)
      {
        $infoProducto  =  $this->productoModel->traerProductoId($item['idProducto']); 
         echo '<tr>'; 
-        echo '<td>'.$item['idProducto'].'</td>';
+        // echo '<td>'.$noItem.'</td>';
         echo '<td>'.$infoProducto['descripcion'].'</td>';
         echo '<td>'.$infoProducto['precio'].'</td>';
+        echo '<td><button btn btn-primary> 
+        <i class="fas fa-trash"></i>
+        </button></td>';
         echo '</tr>';
-       $total += $infoProducto['precio'];
+        $noItem++;
+        $total += $infoProducto['precio'];
       }  
+      // <i class="bi bi-trash"></i>
       echo '<tr>'; 
       echo '<td></td>'; 
       echo '<td>Total:</td>'; 

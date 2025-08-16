@@ -37,7 +37,7 @@ class cuentasView
         ?>
         <div>
             CUENTAS 
-            <table class="table table-striped">
+            <table class="table table-striped table-hover">
               <?php
                 foreach($cuentasPen as $cuenta)
                 {
