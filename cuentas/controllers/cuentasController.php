@@ -3,7 +3,7 @@
 $ruta = dirname(dirname(dirname(__FILE__)));
 // die('llego a opciones'.$ruta);
 require_once($ruta.'/cuentas/views/cuentasView.php');
-// require_once($ruta.'/cuentas/views/CuentaModel.php');
+require_once($ruta.'/cuentas/models/CuentaModel.php');
 
 
 class cuentasController
@@ -14,7 +14,7 @@ class cuentasController
     {
         // echo 'controlador de sucursales';
         $this->view = new cuentasView();
-        // $this->model = new CuentaModel();
+        $this->model = new CuentaModel();
         // $this->view->menuOpcionesGrupos();
         if($_REQUEST['opcion']=='listarCuentas')
         {
@@ -23,8 +23,14 @@ class cuentasController
         }
         if($_REQUEST['opcion']=='crearNuevaCuenta')
         {
-              $this->model->crearNuevaCuenta();
+             $idCuentaNueva =  $this->model->crearNuevaCuenta();
+            // //  $respu[0] = 
+             echo json_encode($idCuentaNueva);
+             exit();
         }
+
+        
+
     }
 
 

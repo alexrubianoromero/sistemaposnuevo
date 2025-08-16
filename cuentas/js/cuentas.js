@@ -17,7 +17,7 @@
     }
 
 
- function alistarNuevaCuenta(){
+ function crearNuevaCuenta(){
 
     // alert ('crear nueva cuenta');
     // alert('idgrupo de producto'+idGrupo);
@@ -25,7 +25,11 @@
         const url = '../cuentas/cuentas.php';
         http.onreadystatechange = function(){
             if(this.readyState == 4 && this.status ==200){
-                document.getElementById("columncentral").innerHTML = '';
+                 var  resp = JSON.parse(this.responseText); 
+                 document.getElementById("idCuentaActual").value = resp;
+                // document.getElementById("columncentral").innerHTML = '';
+                mostrarGrupos();
+
             }
         };
         
@@ -36,6 +40,9 @@
         // + "&tipoMov=2"
         );
 
-        mostrarGrupos();
 }
+
+
+
+
 

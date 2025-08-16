@@ -9,8 +9,12 @@ class CuentaModel extends Conexion
 
     public function crearNuevaCuenta()
     {
-        $sql= "insert into cuentas (descripcion) values('descrip') ";
+        $fecha_y_hora = date('Y-m-d H:i:s');
+// echo "La fecha y hora actuales son: " . $fecha_y_hora;
+        $sql= "insert into cuentas (descripcion) values('".$fecha_y_hora."') ";
         $consulta = mysql_query($sql,$this->connectMysql()); 
+        $maxId= $this->maximoIdCuentas();
+        return $maxId;
     }
 
     // public function traerCuentas()
@@ -28,6 +32,13 @@ class CuentaModel extends Conexion
          return $cuentas;
     }
 
+    public function maximoIdCuentas()
+    {
+        $sql ="select max(id) as maxId from cuentas ";
+        $consulta = mysql_query($sql,$this->connectMysql()); 
+        $maxId = mysql_fetch_assoc($consulta);
+        return $maxId['maxId'];
+    }
     
 
 }

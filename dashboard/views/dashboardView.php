@@ -66,6 +66,7 @@ class dashboardView{
                         ultima linea
                     </div>
                 </div>
+                <?php   $this->modalProducto();  ?>
             </body>
             </html>
             <script src="../dashboard/js/dashboard.js"></script>
@@ -75,6 +76,7 @@ class dashboardView{
             <script src="../sucursales/js/sucursales.js"></script>
             <script src="../mesas/js/mesas.js"></script>
             <script src="../cuentas/js/cuentas.js"></script>
+            <script src="../itemsCuentas/js/itemsCuentas.js"></script>
         <?php
     }
 
@@ -82,10 +84,10 @@ class dashboardView{
     {
        ?>
             <div id="cuenta" style="height:10hv;"  class=" row borderLinea">
-
+                <input type="text" id="idCuentaActual" >
                 <div class="d-grid gap-2">
                     <button class="btn btn-secondary btn-lg"
-                    onclick ="alistarNuevaCuenta();"
+                    onclick ="crearNuevaCuenta();"
                     >Cuenta..</button>
                 </div>
             </div>
@@ -150,6 +152,31 @@ class dashboardView{
             </html>
         <?php
     }
+
+
+    public function modalProducto()
+    {
+      ?>
+      <div class="modal fade" id="modalProducto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Producto</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="modalBodyProducto">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            </div>
+            </div>
+        </div>
+    </div>
+
+      <?php
+    }
+    
 
 }
 ?>
