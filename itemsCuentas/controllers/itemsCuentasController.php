@@ -29,6 +29,14 @@ class itemsCuentasController
            
         }
 
+        if($_REQUEST['opcion']='listarItemsCuentaExistente')
+        {
+            // echo '<pre>'; 
+            // print_r($_REQUEST); 
+            // echo '</pre>';
+           $items =  $this->itemMOdel->listarItemsIdCuenta($_REQUEST['idCuenta']);
+        }
+
         // if($_REQUEST['opcion']='agregarItemACuenta123')
         // {
         //     echo '<pre>'; 

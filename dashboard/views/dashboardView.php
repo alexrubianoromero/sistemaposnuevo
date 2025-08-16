@@ -86,7 +86,7 @@ class dashboardView{
     {
        ?>
             <div id="cuenta" style="height:10hv;"  class=" row borderLinea">
-                <input type="hidden" id="idCuentaActual" >
+                <input type="text" id="idCuentaActual" >
                 <div class="d-grid gap-2">
                     <button class="btn btn-secondary btn-lg"
                     onclick ="crearNuevaCuenta();"

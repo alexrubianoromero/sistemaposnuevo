@@ -42,7 +42,9 @@ class cuentasView
                 foreach($cuentasPen as $cuenta)
                 {
                     echo '<tr>'; 
-                    echo '<td>'.$cuenta['id'].'</td>'; 
+                    echo '<td><button 
+                                onclick="listarItemsCuentaExistente('.$cuenta['id'].');"  
+                                class="btn btn-secondary">'.$cuenta['id'].'</button></td>'; 
                     echo '<td>'.$cuenta['fecha'].'</td>'; 
                     echo '</tr>';
                 }
