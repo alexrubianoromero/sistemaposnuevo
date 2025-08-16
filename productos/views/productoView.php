@@ -20,7 +20,7 @@ class productoView
                 {
                     echo '<div class="col-lg-2 ms-2">'; 
                         echo '<button 
-                        onclick="agregarItemACuenta('.$producto['id'].');"
+                        onclick="agregarItemACuenta123456('.$producto['id'].');"
                         class="btn btn-secondary btn-lg mt-2"
                         >'.$producto["descripcion"].'</button>';
                         echo '</div>';     

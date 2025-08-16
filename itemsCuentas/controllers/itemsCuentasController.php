@@ -20,10 +20,25 @@ class itemsCuentasController
 
 
 
-        if($_REQUEST['opcion']='agregarItemACuenta')
+        if($_REQUEST['opcion']='agregarItemACuenta123456')
         {
+            // echo '<pre>'; 
+            // print_r($_REQUEST); 
+            // echo '</pre>';
             $this->itemMOdel->crearItemCuenta($_REQUEST);
+           
         }
+
+        // if($_REQUEST['opcion']='agregarItemACuenta123')
+        // {
+        //     echo '<pre>'; 
+        //     print_r($_REQUEST); 
+        //     echo '</pre>';
+        //     die('llego aca');
+        //     $this->itemMOdel->crearItemCuenta($_REQUEST);
+        //     die('insertado el nuevo item ');
+        // }
+        
         if($_REQUEST['opcion']='listarItemsIdCuenta')
         {
             $items =  $this->itemMOdel->listarItemsIdCuenta($_REQUEST['idCuenta']);

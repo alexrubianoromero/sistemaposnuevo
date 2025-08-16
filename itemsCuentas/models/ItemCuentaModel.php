@@ -10,7 +10,9 @@ class ItemCuentaModel extends Conexion
     {
         $sql = "insert into items_cuentas (idCuenta,idProducto)   
         values('".$request['idCuenta']."','".$request['idProducto']."')  ";
+        // die($sql); 
         $consulta = mysql_query($sql,$this->connectMysql()); 
+    
     }
     
     public function listarItemsIdCuenta($idCuenta)

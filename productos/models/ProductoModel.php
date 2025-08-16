@@ -9,8 +9,17 @@ class ProductoModel extends Conexion
     {
         $sql = "select * from productos where idGrupo = '".$idGrupo."'  ";
         $consulta = mysql_query($sql,$this->connectMysql()); 
-         $productos = $this->get_table_assoc($consulta);
-         return $productos;
+        $productos = $this->get_table_assoc($consulta);
+        return $productos;
+    }
+    
+    public function traerProductoId($idProducto)
+    {
+        $sql = "select * from productos where id = '".$idProducto."'   "; 
+        $consulta = mysql_query($sql,$this->connectMysql()); 
+        $producto = mysql_fetch_assoc($consulta);
+        return $producto; 
+
     }
 
 
