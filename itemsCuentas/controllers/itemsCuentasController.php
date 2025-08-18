@@ -26,6 +26,7 @@ class itemsCuentasController
             // print_r($_REQUEST); 
             // echo '</pre>';
             $this->itemMOdel->crearItemCuenta($_REQUEST);
+            // die('productoagregado');
            
         }
 
@@ -37,22 +38,9 @@ class itemsCuentasController
 
         if($_REQUEST['opcion']='eliminarItemCuenta')
         {
-            // echo '<pre>'; 
-            // print_r($_REQUEST); 
-            // echo '</pre>';
            $items =  $this->itemMOdel->eliminarItemCuenta($_REQUEST['idItem']);
         }
 
-        // if($_REQUEST['opcion']='agregarItemACuenta123')
-        // {
-        //     echo '<pre>'; 
-        //     print_r($_REQUEST); 
-        //     echo '</pre>';
-        //     die('llego aca');
-        //     $this->itemMOdel->crearItemCuenta($_REQUEST);
-        //     die('insertado el nuevo item ');
-        // }
-        
         
         if($_REQUEST['opcion']='listarItemsIdCuenta')
         {
