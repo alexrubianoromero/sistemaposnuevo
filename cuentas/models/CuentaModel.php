@@ -40,6 +40,12 @@ class CuentaModel extends Conexion
         return $maxId['maxId'];
     }
     
+    public function eliminarCuenta($idCuenta)
+    {
+        $sql = "delete from cuentas where id = '".$idCuenta."'   "; 
+        $consulta = mysql_query($sql,$this->connectMysql()); 
+    }
+    
 
 }
 

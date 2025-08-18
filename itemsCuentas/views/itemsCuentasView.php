@@ -24,7 +24,10 @@ class itemsCuentasView
         // echo '<td>'.$noItem.'</td>';
         echo '<td>'.$infoProducto['descripcion'].'</td>';
         echo '<td>'.$infoProducto['precio'].'</td>';
-        echo '<td><button btn btn-primary> 
+        echo '<td><button 
+                  class="btn btn-secondary btn-sm"
+                  onclick="eliminarItemCuenta('.$item['id'].');"
+                  > 
         <i class="fas fa-trash"></i>
         </button></td>';
         echo '</tr>';
@@ -38,6 +41,6 @@ class itemsCuentasView
       echo '<td>'.$total.'</td>'; 
       echo '</tr>';
       echo '</table>';
-  }
+    }
 
 }

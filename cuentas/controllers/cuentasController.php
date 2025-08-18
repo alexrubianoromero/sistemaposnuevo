@@ -28,6 +28,11 @@ class cuentasController
              echo json_encode($idCuentaNueva);
              exit();
         }
+        if($_REQUEST['opcion']=='eliminarCuenta')
+        {
+            $this->model->eliminarCuenta($_REQUEST['idCuenta']);
+          
+        }
 
         
 

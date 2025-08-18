@@ -31,10 +31,17 @@ class itemsCuentasController
 
         if($_REQUEST['opcion']='listarItemsCuentaExistente')
         {
+           $items =  $this->itemMOdel->listarItemsIdCuenta($_REQUEST['idCuenta']);
+           $this->view->listarItemsIdCuenta($items); 
+
+
+        }
+        if($_REQUEST['opcion']='eliminarItemCuenta')
+        {
             // echo '<pre>'; 
             // print_r($_REQUEST); 
             // echo '</pre>';
-           $items =  $this->itemMOdel->listarItemsIdCuenta($_REQUEST['idCuenta']);
+           $items =  $this->itemMOdel->eliminarItemCuenta($_REQUEST['idItem']);
         }
 
         // if($_REQUEST['opcion']='agregarItemACuenta123')

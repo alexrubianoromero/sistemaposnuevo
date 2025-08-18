@@ -50,7 +50,7 @@ class dashboardView{
                             
                         </div>
                         
-                        <div class="col-lg-7 bordeLinea" id="columncentral" >
+                        <div class="col-lg-7 bordeLinea" id="columncentral" style="height: 100%; overflow: auto;">
                             Contenido de la Columna Central
                         </div>
 
@@ -74,7 +74,6 @@ class dashboardView{
             <script src="../dashboard/js/dashboard.js"></script>
             <script src="../grupos/js/grupos.js"></script>
             <script src="../productos/js/productos.js"></script>
-            <script src="../grupos/js/grupos.js"></script>
             <script src="../sucursales/js/sucursales.js"></script>
             <script src="../mesas/js/mesas.js"></script>
             <script src="../cuentas/js/cuentas.js"></script>

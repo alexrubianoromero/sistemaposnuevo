@@ -15,6 +15,24 @@
         // + "&tipoMov=2"
         );
     }
+ function eliminarCuenta(idCuenta){
+    // alert('idgrupo de producto'+idGrupo);
+        const http=new XMLHttpRequest();
+        const url = '../cuentas/cuentas.php';
+        http.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status ==200){
+                document.getElementById("columncentral").innerHTML = this.responseText;
+            }
+        };
+        
+        http.open("POST",url);
+        http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        http.send("opcion=eliminarCuenta"
+        + "&idCuenta="+idCuenta
+        // + "&tipoMov=2"
+        );
+        listarCuentas();
+    }
 
 
  function crearNuevaCuenta(){
@@ -27,7 +45,8 @@
             if(this.readyState == 4 && this.status ==200){
                  var  resp = JSON.parse(this.responseText); 
                  document.getElementById("idCuentaActual").value = resp;
-                // document.getElementById("columncentral").innerHTML = '';
+                document.getElementById("columncentral").innerHTML = '';
+                document.getElementById("divItemsCuenta").innerHTML = '';
                 mostrarGrupos();
 
             }
