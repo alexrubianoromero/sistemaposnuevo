@@ -46,7 +46,7 @@ class cuentasView
                                 onclick="listarItemsCuentaExistente('.$cuenta['id'].');"  
                                 class="btn btn-secondary">'.$cuenta['id'].'</button></td>'; 
                     echo '<td>'.$cuenta['fecha'].'</td>'; 
-                    echo '<td><button onclick="eliminarCuenta('.$cuenta['id'].');"></button></td>'; 
+                    echo '<td><button onclick="eliminarCuenta('.$cuenta['id'].');"><i class="fas fa-trash"></i></button></td>'; 
                     echo '</tr>';
                 }
                ?> 

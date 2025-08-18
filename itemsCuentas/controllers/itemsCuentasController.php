@@ -33,9 +33,8 @@ class itemsCuentasController
         {
            $items =  $this->itemMOdel->listarItemsIdCuenta($_REQUEST['idCuenta']);
            $this->view->listarItemsIdCuenta($items); 
-
-
         }
+
         if($_REQUEST['opcion']='eliminarItemCuenta')
         {
             // echo '<pre>'; 
@@ -53,6 +52,7 @@ class itemsCuentasController
         //     $this->itemMOdel->crearItemCuenta($_REQUEST);
         //     die('insertado el nuevo item ');
         // }
+        
         
         if($_REQUEST['opcion']='listarItemsIdCuenta')
         {

@@ -21,7 +21,9 @@
         const url = '../cuentas/cuentas.php';
         http.onreadystatechange = function(){
             if(this.readyState == 4 && this.status ==200){
-                document.getElementById("columncentral").innerHTML = this.responseText;
+                 document.getElementById("idCuentaActual").value = '';
+                // document.getElementById("columncentral").innerHTML = this.responseText;
+                  document.getElementById("divItemsCuenta").innerHTML = '';
             }
         };
         

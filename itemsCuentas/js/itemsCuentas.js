@@ -28,7 +28,7 @@
         http.onreadystatechange = function(){
             if(this.readyState == 4 && this.status ==200){
                 document.getElementById("idCuentaActual").value= idCuenta;
-                document.getElementById("divItemsCuenta").innerHTML = '';
+                // document.getElementById("divItemsCuenta").innerHTML = '';
                 document.getElementById("divItemsCuenta").innerHTML = this.responseText;
                 // document.getElementById("cantidad").focus();
             }

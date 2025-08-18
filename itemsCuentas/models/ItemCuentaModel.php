@@ -31,4 +31,10 @@ class ItemCuentaModel extends Conexion
         $sql = "delete from items_cuentas   where id =  '".$idItem."'  "; 
         $consulta = mysql_query($sql,$this->connectMysql()); 
     }
+    
+    public function eliminarItemsIdCuenta($idCuenta)
+    {
+        $sql = "delete from items_cuentas  where idCuenta = '".$idCuenta."'  ";
+        $consulta = mysql_query($sql,$this->connectMysql()); 
+    }
 }
