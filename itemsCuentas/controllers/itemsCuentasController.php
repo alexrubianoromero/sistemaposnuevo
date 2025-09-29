@@ -20,29 +20,30 @@ class itemsCuentasController
 
 
 
-        if($_REQUEST['opcion']='agregarItemACuenta123456')
+        if($_REQUEST['opcion']=='agregarItemACuenta123456')
         {
-            // echo '<pre>'; 
-            // print_r($_REQUEST); 
-            // echo '</pre>';
             $this->itemMOdel->crearItemCuenta($_REQUEST);
-            // die('productoagregado');
+              $items =  $this->itemMOdel->listarItemsIdCuenta($_REQUEST['idCuenta']);
+            $this->view->listarItemsIdCuenta($items);
+            die();
            
         }
 
-        if($_REQUEST['opcion']='listarItemsCuentaExistente')
+        if($_REQUEST['opcion']=='listarItemsCuentaExistente')
         {
            $items =  $this->itemMOdel->listarItemsIdCuenta($_REQUEST['idCuenta']);
            $this->view->listarItemsIdCuenta($items); 
+           die();
         }
 
-        if($_REQUEST['opcion']='eliminarItemCuenta')
+        if($_REQUEST['opcion']=='eliminarItemCuenta')
         {
+            // die('llego a eliminar cuebnta ');
            $items =  $this->itemMOdel->eliminarItemCuenta($_REQUEST['idItem']);
         }
 
         
-        if($_REQUEST['opcion']='listarItemsIdCuenta')
+        if($_REQUEST['opcion']=='listarItemsIdCuenta')
         {
             $items =  $this->itemMOdel->listarItemsIdCuenta($_REQUEST['idCuenta']);
             $this->view->listarItemsIdCuenta($items);

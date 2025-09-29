@@ -47,15 +47,14 @@
 
     function eliminarItemCuenta(idItem)
     {
-        // alert('idproducto'+idProducto); 
-          var idCuenta =  document.getElementById("idCuentaActual").value;
+        // alert('idItem'+idItem); 
+        var idCuenta =  document.getElementById("idCuentaActual").value;
         const http=new XMLHttpRequest();
         const url = '../itemsCuentas/itemsCuentas.php';
         http.onreadystatechange = function(){
             if(this.readyState == 4 && this.status ==200){
-                document.getElementById("idCuentaActual").value= idCuenta;
-                document.getElementById("divItemsCuenta").innerHTML = this.responseText;
-                // document.getElementById("cantidad").focus();
+                // document.getElementById("idCuentaActual").value= idCuenta;
+                // document.getElementById("divItemsCuenta").innerHTML = this.responseText;
             }
         };
 
@@ -63,8 +62,9 @@
         http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         http.send("opcion=eliminarItemCuenta"
         + "&idItem="+idItem
+        + "&idCuenta="+idCuenta
         );
-        // mostrarGrupos();
+        mostrarGrupos();
         setTimeout(() => {
             listarItemsCuentaExistente(idCuenta)
         }, 300);

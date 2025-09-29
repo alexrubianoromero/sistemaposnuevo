@@ -1,2 +1,2 @@
-delete from cuentas;
-delete from items_cuentas;
+truncate cuentas;  
+truncate items_cuentas;

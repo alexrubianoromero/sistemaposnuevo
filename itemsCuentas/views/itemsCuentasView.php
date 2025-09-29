@@ -22,7 +22,7 @@ class itemsCuentasView
        $infoProducto  =  $this->productoModel->traerProductoId($item['idProducto']); 
         echo '<tr>'; 
         // echo '<td>'.$noItem.'</td>';
-        echo '<td>***'.$infoProducto['descripcion'].'</td>';
+        echo '<td>'.$infoProducto['descripcion'].'</td>';
         echo '<td>'.$infoProducto['precio'].'</td>';
         echo '<td><button 
                   class="btn btn-secondary btn-sm"
