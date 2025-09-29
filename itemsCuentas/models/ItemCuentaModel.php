@@ -25,6 +25,14 @@ class ItemCuentaModel extends Conexion
 
     }
 
+    public function sumarItemsIdCuenta($idCuenta)
+    {
+        $sql = "select sum(total) as total from items_cuentas where idCuenta = '".$idCuenta."'  ";
+         $consulta = mysql_query($sql,$this->connectMysql());
+         $arrSuma = mysql_fetch_assoc($consulta); 
+         return $arrSuma['total'];
+    }
+
 
     public function eliminarItemCuenta($idItem)
     {

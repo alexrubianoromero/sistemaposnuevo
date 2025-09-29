@@ -14,8 +14,10 @@ class itemsCuentasView
 
   public function listarItemsIdCuenta($items)
   {
+    // $total =  sumarItemsIdCuenta($idCuenta);
     $total  = 0;
     $noItem= 1;
+     
      echo '<table>'; 
      foreach($items as $item)
      {

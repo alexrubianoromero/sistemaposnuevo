@@ -54,7 +54,7 @@ class dashboardView{
                             Contenido de la Columna Central
                         </div>
 
-                        <div class="col-lg-3 bordeLinea">
+                        <div class="col-lg-3" style=" height:80vh; border:2px solid red;overflow-y:auto;">
                             <!-- Contenido de la Columna Derecha      -->
                             <?php   $this->menuCuenta();    ?>
 
@@ -84,7 +84,7 @@ class dashboardView{
     public function menuCuenta ()
     {
        ?>
-            <div id="cuenta" style="height:10hv;"  class=" row borderLinea">
+            <div id="cuenta" style="height:10hv;border:2px solid blue;"  class=" row ">
                 <input type="text" id="idCuentaActual" >
                 <div class="d-grid gap-2">
                     <button class="btn btn-secondary btn-lg"
@@ -92,7 +92,7 @@ class dashboardView{
                     >Cuenta..</button>
                 </div>
             </div>
-            <div id="divItemsCuenta"  style="height:20hv;" class="borderLinea">
+            <div id="divItemsCuenta"  style="height:30hv;overflow-y:auto;border:2px solid green;" class="">
                     
             </div>
         
