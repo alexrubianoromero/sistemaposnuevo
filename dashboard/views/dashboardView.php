@@ -54,7 +54,7 @@ class dashboardView{
                             Contenido de la Columna Central
                         </div>
 
-                        <div class="col-lg-3" style=" height:80vh; border:2px solid red;overflow-y:auto;">
+                        <div class="col-lg-3" style=" height:80vh; border:2px solid black;overflow-y:auto;">
                             <!-- Contenido de la Columna Derecha      -->
                             <?php   $this->menuCuenta();    ?>
 
@@ -84,15 +84,15 @@ class dashboardView{
     public function menuCuenta ()
     {
        ?>
-            <div id="cuenta" style="height:10hv;border:2px solid blue;"  class=" row ">
-                <input type="text" id="idCuentaActual" >
-                <div class="d-grid gap-2">
+            <div id="cuenta" style="height:10hv;border:2px solid black;padding:5px;"  class=" row ">
+                <input type="hidden" id="idCuentaActual" >
+                <div class="d-grid gap-2 mt-2" style="padding:5px;">
                     <button class="btn btn-secondary btn-lg"
                     onclick ="crearNuevaCuenta();"
                     >Cuenta..</button>
                 </div>
             </div>
-            <div id="divItemsCuenta"  style="height:30hv;overflow-y:auto;border:2px solid green;" class="">
+            <div id="divItemsCuenta"  style="height:30hv;overflow-y:auto;border:2px solid black;" class="mt-2">
                     
             </div>
         
@@ -107,7 +107,7 @@ class dashboardView{
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Botones estilo ETPOS</title>
+                <title>Botones</title>
                 <style>
                    
                 </style>

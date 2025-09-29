@@ -24,7 +24,7 @@ class itemsCuentasController
         {
             $this->itemMOdel->crearItemCuenta($_REQUEST);
               $items =  $this->itemMOdel->listarItemsIdCuenta($_REQUEST['idCuenta']);
-            $this->view->listarItemsIdCuenta($items);
+            $this->view->listarItemsIdCuenta($items,$_REQUEST['idCuenta']);
             die();
            
         }
@@ -32,7 +32,7 @@ class itemsCuentasController
         if($_REQUEST['opcion']=='listarItemsCuentaExistente')
         {
            $items =  $this->itemMOdel->listarItemsIdCuenta($_REQUEST['idCuenta']);
-           $this->view->listarItemsIdCuenta($items); 
+           $this->view->listarItemsIdCuenta($items,$_REQUEST['idCuenta']);
            die();
         }
 
@@ -46,7 +46,7 @@ class itemsCuentasController
         if($_REQUEST['opcion']=='listarItemsIdCuenta')
         {
             $items =  $this->itemMOdel->listarItemsIdCuenta($_REQUEST['idCuenta']);
-            $this->view->listarItemsIdCuenta($items);
+            $this->view->listarItemsIdCuenta($items,$_REQUEST['idCuenta']);
 
         }
 
