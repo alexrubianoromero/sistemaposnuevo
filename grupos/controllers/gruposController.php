@@ -20,6 +20,14 @@ class gruposController
         {
               $this->view->mostrarGrupos(); 
         }
+        if($_REQUEST['opcion']=='muestreFormuNuevoGrupo')
+        {
+              $this->view->muestreFormuNuevoGrupo(); 
+        }
+        if($_REQUEST['opcion']=='grabarInfoNuevoGrupo')
+        {
+              $this->model->grabarInfoNuevoGrupo($_REQUEST['nombreGrupo']); 
+        }
 
     
 

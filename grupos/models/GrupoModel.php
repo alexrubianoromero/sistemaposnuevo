@@ -9,8 +9,14 @@ class GrupoModel extends Conexion
     {
         $sql = "select * from grupos ";
         $consulta = mysql_query($sql,$this->connectMysql()); 
-         $grupos = $this->get_table_assoc($consulta);
-         return $grupos;
+        $grupos = $this->get_table_assoc($consulta);
+        return $grupos;
+    }
+    
+    public function grabarInfoNuevoGrupo($nombreGrupo)
+    {
+        $sql ="insert into grupos (nombre)  values('".$nombreGrupo."')";
+        $consulta = mysql_query($sql,$this->connectMysql()); 
     }
 
 }
