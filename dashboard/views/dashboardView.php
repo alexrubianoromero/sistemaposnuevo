@@ -135,6 +135,10 @@ class dashboardView{
                         <span class="icon icon-opciones">🔧</span>
                         Grupos
                     </button>
+                    <button class="btn btn-secondary btn-sm me-2" onclick="mostrarMenuProductos();">
+                        <span class="icon icon-opciones">🔧</span>
+                        Productos
+                    </button>
                     <button class="btn btn-secondary btn-sm me-2" onclick="mostrarSucursales();">
                         <span class="icon icon-opciones">M</span>
                         Sucursales

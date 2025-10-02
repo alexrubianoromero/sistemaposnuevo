@@ -54,6 +54,18 @@ class gruposView
         <?php
     }
 
+    public function mostrarSelectGrupos()
+    {
+        $grupos =$this->model->traerGrupos(); 
+        echo '<label>Grupo:</label>';
+        echo '<select id="idGrupo" class="form-control mt-2">'; 
+        echo '<option value="">Seleccione...</option>';
+        foreach($grupos as $grupo)
+            {
+               echo '<option value="'.$grupo['id'].'">'.$grupo['nombre'].'</option>';
+            } 
+        echo '</select>';
+    }
 
 }
 

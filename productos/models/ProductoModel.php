@@ -21,6 +21,27 @@ class ProductoModel extends Conexion
         return $producto; 
 
     }
+    public function traerProductos()
+    {
+        $sql = "select * from productos  order by descripcion asc "; 
+        $consulta = mysql_query($sql,$this->connectMysql()); 
+        $productos = $this->get_table_assoc($consulta);
+        return $productos; 
+
+    }
+    public function grabarNuevoProducto($request)
+    {
+        $sql = "insert into productos (idGrupo,descripcion,precio) 
+        values('".$request['idGrupo']."'
+        ,'".$request['descripcion']."'
+        ,'".$request['precio']."'
+        ) "; 
+        //  die($sql);
+        $consulta = mysql_query($sql,$this->connectMysql()); 
+        // $productos = $this->get_table_assoc($consulta);
+        // return $productos; 
+
+    }
 
 
 }

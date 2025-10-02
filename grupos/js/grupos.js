@@ -7,6 +7,7 @@
         http.onreadystatechange = function(){
             if(this.readyState == 4 && this.status ==200){
                 document.getElementById("columna1Dashboard").innerHTML = this.responseText;
+                document.getElementById("columncentral").innerHTML = '';
             }
         };
         
