@@ -76,28 +76,43 @@ class productoView
       public function mostrarSoloLosProductos()
       {
         $productos =$this->model->traerProductos();
-        echo '<div class="row mt-2">';  
+        echo '<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-2">';
 
-        foreach($productos as $producto)
-            {
-                $ruta = '../productos/imagenes/';
-                echo '<div class="col-lg-3 me-2" style="width:100px;height:100px;background-image:'.$ruta.$producto['rutaImagen'].';">';
-                echo '<button
-                data-bs-toggle="modal" data-bs-target="#modalProductos"
-                onclick="editarProducto('.$producto['id'].');"
-                class="btn btn-secondary">';
-                echo $producto['descripcion'];
-                echo'</button>';
-                echo '</div>';    
-            } 
+            foreach($productos as $producto)
+                {
+                    $ruta = '../productos/imagenes/';
+                    $rutaCompleta = $ruta.$producto['rutaImagen'];
+                    ?>
+                     <div class="col">
+                        <div class="card h-80">
+                            <img src="<?php   echo $rutaCompleta;  ?>" class="card-img-top" alt="Pizza">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php   echo $producto['nombre'];  ?></h5>
+                                <p class="card-text"><?php   echo $producto['descripcion'];  ?></p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between align-items-center">
+                                <h6 class="text-success mb-0"><?php   echo $producto['precio'];  ?></h6>
+                                <a href="#" class="btn btn-primary">Añadir</a>
+                            </div>
+                        </div>
+                    </div>
+                   <?php
+                    // exit();
+                } 
+                
+         echo '</div>';
+    }
             
-        echo '</div>';
-      }
-
-
-      public function modalProductos()
-      {
-        ?>
+            
+            // echo '<button
+            // data-bs-toggle="modal" data-bs-target="#modalProductos"
+            // onclick="editarProducto('.$producto['id'].');"
+            // class="btn btn-secondary">';
+            // echo $producto['descripcion'];
+            // echo'</button>';
+            public function modalProductos()
+            {
+                ?>
             <div class="modal fade" id="modalProductos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
