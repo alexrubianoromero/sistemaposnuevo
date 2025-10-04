@@ -40,7 +40,12 @@ class ProductoModel extends Conexion
         $consulta = mysql_query($sql,$this->connectMysql()); 
         // $productos = $this->get_table_assoc($consulta);
         // return $productos; 
+    }
 
+    public function actImagenProducto($idProducto,$nombreArchivo)
+    {
+        $sql = "update productos set  rutaImagen = '".$nombreArchivo."'    where id=  '".$idProducto."'  ";
+           $consulta = mysql_query($sql,$this->connectMysql()); 
     }
 
 

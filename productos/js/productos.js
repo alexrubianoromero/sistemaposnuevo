@@ -70,6 +70,22 @@
         http.send("opcion=formuAgregarProducto"
         );
     }
+ function editarProducto(idProducto){
+    // alert('idgrupo de producto');
+        const http=new XMLHttpRequest();
+        const url = '../productos/productos.php';
+        http.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status ==200){
+                document.getElementById("modalProductosBody").innerHTML = this.responseText;
+            }
+        };
+        
+        http.open("POST",url);
+        http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        http.send("opcion=editarProducto"
+             + "&idProducto="+idProducto
+        );
+    }
  function grabarNuevoProducto(){
     // alert('idgrupo de producto');
         var idGrupo =document.getElementById("idGrupo").value;
@@ -93,6 +109,37 @@
         );
         // mostrarSoloLosProductos();
     }
+
+function realizarCargaArchivo(idProducto)
+{
+        // var fechaSubidaImagen = document.getElementById('fechaSubidaImagen').value;
+        var inputFile = document.getElementById('archivo');
+        if (inputFile.files.length > 0) {
+            let formData = new FormData();
+            formData.append("archivo", inputFile.files[0]); // En la posición 0; es decir, el primer elemento
+            formData.append("opcion", 'realizarCargaArchivo'); // En la posición 0; es decir, el primer elemento
+            formData.append("idProducto", idProducto); // En la posición 0; es decir, el primer elemento
+            // formData.append("fechaSubidaImagen", fechaSubidaImagen); // En la posición 0; es decir, el primer elemento
+            fetch("../productos/productos.php", {
+                method: 'POST',
+                body: formData,
+            })
+            .then(respuesta => respuesta.text())
+            .then(decodificado => {
+                console.log(decodificado.archivo);
+                document.getElementById("div_cargue_archivo").innerHTML = 'Imagen Almacenada!!';
+            });
+        } else {
+            alert("Selecciona un archivo");
+        }
+        setTimeout(() => {
+            mostrarImagenesOrden(idOrden); 
+        }, 300);
+    
+}
+
+
+
 
 
 //  function pantallaAgregarProducto(idProducto)

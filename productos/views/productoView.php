@@ -76,15 +76,22 @@ class productoView
       public function mostrarSoloLosProductos()
       {
         $productos =$this->model->traerProductos();
-          foreach($productos as $producto)
-          {
-          echo '<div class="col-lg-2 mt-2">';
-              echo '<button class="btn btn-secondary">';
-                  echo $producto['descripcion'];
-              echo'</button>';
-          echo '</div>';    
-          } 
+        echo '<div class="row mt-2">';  
 
+        foreach($productos as $producto)
+            {
+                $ruta = '../productos/imagenes/';
+                echo '<div class="col-lg-3 me-2" style="width:100px;height:100px;background-image:'..';">';
+                echo '<button
+                data-bs-toggle="modal" data-bs-target="#modalProductos"
+                onclick="editarProducto('.$producto['id'].');"
+                class="btn btn-secondary">';
+                echo $producto['descripcion'];
+                echo'</button>';
+                echo '</div>';    
+            } 
+            
+        echo '</div>';
       }
 
 
@@ -134,7 +141,72 @@ class productoView
          </div>
          <?php
       }
+      public function editarProducto($idProducto)
+      {
+        // echo 'formu agregar producto';
+         $producto = $this->model->traerProductoId($idProducto);
+         ?>
+         <div class="mt-3 row" >
+            <div class="col-lg-4">
+               <?php   $this->grupoView->mostrarSelectGruposSelectActual($idProducto);      ?>
+            </div>
+            <div class="col-lg-4">
+                <label>Descripcion:</label>
+                <input type="text" id="descripcionProducto" class="form-control mt-2" value ="<?php echo $producto['descripcion'] ?>">
+            </div>
+            <div class="col-lg-4">
+                <label>Valor:</label>
+                <input type="text" id="precioProducto" class="form-control mt-2" value ="<?php echo $producto['precio'] ?>">
+            </div>
+
+            <div class="mt-3 " > 
+               <button class="btn btn-primary" onclick="actualizarProducto($idProducto);">Actualizar</button>
+            </div>
+         </div>
+         <div class="mt-3 row" style="border:1px solid black;padding:10px;" >
+            <?php $this->verImagenenProducto($idProducto);  ?>
+         </div>
+         <?php
+      }
       
+    public function verImagenenProducto($idProducto)
+    {
+        // $raiz = dirname(__FILE__); 
+        $producto = $this->model->traerProductoId($idProducto);
+        ?><p>Imagen:</p>
+                <div class="mt-3">
+                    <form  enctype="multipart/form-data">
+                        <input class="form-control"  name="archivo" id="archivo" type="file">
+                        <div id="div_muestre_resultado"></div>
+                        <span id="demo"></span>
+                    
+                    </form>
+                </div>  
+                <br>
+                <div class="mt-4">
+                    <button  class ="btn btn-primary "    onclick="realizarCargaArchivo(<?php echo $idProducto; ?>);" >SubirImagen</button>
+                </div>
+            
+          
+            <?php
+
+            // $imagen = $producto['rutaImagen'];
+            // echo 'ver fotos ganado';
+        
+            ?>
+            <div align="center" class="row mt-2">
+                <div class="col-lg-12" >
+                    <img src = "../productos/imagenes/<?php  echo $producto['rutaImagen'] ?>" width="90%;" >
+                </div>
+              
+            </div>
+
+        
+            <?php
+    
+        
+
+    }
 
 
 }    

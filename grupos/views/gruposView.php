@@ -67,6 +67,26 @@ class gruposView
         echo '</select>';
     }
 
+    public function mostrarSelectGruposSelectActual($idGrupoActual)
+    {
+        $grupos =$this->model->traerGrupos(); 
+        echo '<label>Grupo:</label>';
+        echo '<select id="idGrupo" class="form-control mt-2">'; 
+        echo '<option value="">Seleccione...</option>';
+        foreach($grupos as $grupo)
+            {
+                if($grupo['id'] == $idGrupoActual)
+                {
+                    echo '<option selected value="'.$grupo['id'].'">'.$grupo['nombre'].'</option>';
+                    
+                }else {
+                    echo '<option value="'.$grupo['id'].'">'.$grupo['nombre'].'</option>';
+
+                }
+            } 
+        echo '</select>';
+    }
+
 }
 
 
