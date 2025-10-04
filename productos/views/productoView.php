@@ -81,7 +81,7 @@ class productoView
         foreach($productos as $producto)
             {
                 $ruta = '../productos/imagenes/';
-                echo '<div class="col-lg-3 me-2" style="width:100px;height:100px;background-image:'..';">';
+                echo '<div class="col-lg-3 me-2" style="width:100px;height:100px;background-image:'.$ruta.$producto['rutaImagen'].';">';
                 echo '<button
                 data-bs-toggle="modal" data-bs-target="#modalProductos"
                 onclick="editarProducto('.$producto['id'].');"
@@ -110,7 +110,6 @@ class productoView
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
                 </div>
                 </div>
             </div>
@@ -143,7 +142,6 @@ class productoView
       }
       public function editarProducto($idProducto)
       {
-        // echo 'formu agregar producto';
          $producto = $this->model->traerProductoId($idProducto);
          ?>
          <div class="mt-3 row" >
@@ -171,7 +169,6 @@ class productoView
       
     public function verImagenenProducto($idProducto)
     {
-        // $raiz = dirname(__FILE__); 
         $producto = $this->model->traerProductoId($idProducto);
         ?><p>Imagen:</p>
                 <div class="mt-3">
@@ -179,32 +176,20 @@ class productoView
                         <input class="form-control"  name="archivo" id="archivo" type="file">
                         <div id="div_muestre_resultado"></div>
                         <span id="demo"></span>
-                    
                     </form>
                 </div>  
                 <br>
                 <div class="mt-4">
                     <button  class ="btn btn-primary "    onclick="realizarCargaArchivo(<?php echo $idProducto; ?>);" >SubirImagen</button>
                 </div>
-            
-          
             <?php
-
-            // $imagen = $producto['rutaImagen'];
-            // echo 'ver fotos ganado';
-        
             ?>
             <div align="center" class="row mt-2">
                 <div class="col-lg-12" >
                     <img src = "../productos/imagenes/<?php  echo $producto['rutaImagen'] ?>" width="90%;" >
                 </div>
-              
             </div>
-
-        
             <?php
-    
-        
 
     }
 
