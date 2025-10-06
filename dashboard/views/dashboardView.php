@@ -43,14 +43,14 @@ class dashboardView{
                         </div>
                     </div>
 
-                    <div class="row "  style="height:80vh;"> 
+                    <div class="row "  style="height:80vh;overflow: auto;"> 
                         <div class="col-lg-2 bordeLinea" id="columna1Dashboard">
                             productos
                            
                             
                         </div>
                         
-                        <div class="col-lg-7 bordeLinea" id="columncentral" style="height: 100%; overflow: auto;">
+                        <div class="col-lg-7 bordeLinea" id="columncentral" style="height:80vh; overflow: auto;">
                             Contenido de la Columna Central
                         </div>
 

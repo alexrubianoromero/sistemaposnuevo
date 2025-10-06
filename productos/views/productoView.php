@@ -15,7 +15,7 @@ class productoView
         $this->model = new ProductoModel();
     }
 
-    public function mostrarProductos($productos)
+    public function mostrarProductos_ante($productos)
     {
             // echo ' llego a menu opcionesview';
             echo '<div class="row"style="padding:10px;">'; 
@@ -30,7 +30,36 @@ class productoView
                         // data-bs-toggle="modal" data-bs-target="#modalProducto"
                         // onclick="pantallaAgregarProducto('.$producto['id'].');"
                 }
+             echo '</div>';   
       }
+    public function mostrarProductos($productos)
+    {
+            // echo ' llego a menu opcionesview';
+            echo '<div class="row"style="padding:10px; ">'; 
+                $ruta = '../productos/imagenes/';
+                foreach($productos  as $producto)
+                    {
+                    $rutaCompleta = $ruta.$producto['rutaImagen'];
+                    echo '<div 
+                            class="col-lg-3 ms-2 mt-2 text-center" 
+                            style="border:1px solid black;padding:5px;border-radius:5px;"
+                             onclick="agregarItemACuenta123456('.$producto['id'].');"
+                         >'; 
+                        echo '<img style="max-width: 100%; " src="'.$rutaCompleta.'">';
+                        echo '<label class="fs-4">'.$producto['nombre'].' </label>';
+                        echo '<label class="fs-2">'.$producto['precio'].'</label>';
+                        // echo '<button 
+                        // class="btn btn-secondary btn-sm mt-2"
+                        // >'.$producto["descripcion"].'</button>';
+                    echo '</div>';     
+                        // data-bs-toggle="modal" data-bs-target="#modalProducto"
+                        // onclick="pantallaAgregarProducto('.$producto['id'].');"
+                }
+             echo '</div>';   
+      }
+
+
+
 
       public function pantallaAgregarProducto($request)
       {
@@ -92,7 +121,10 @@ class productoView
                             </div>
                             <div class="card-footer d-flex justify-content-between align-items-center">
                                 <h6 class="text-success mb-0"><?php   echo $producto['precio'];  ?></h6>
-                                <a href="#" class="btn btn-primary">Añadir</a>
+                                <a  class="btn btn-primary"
+                                
+                                >Añadir</a>
+
                             </div>
                         </div>
                     </div>
