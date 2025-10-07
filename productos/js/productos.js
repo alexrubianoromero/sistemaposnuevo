@@ -89,6 +89,7 @@
  function grabarNuevoProducto(){
     // alert('idgrupo de producto');
         var idGrupo =document.getElementById("idGrupo").value;
+        var nombre =document.getElementById("nombreProducto").value;
         var descripcion =document.getElementById("descripcionProducto").value;
         var precio =document.getElementById("precioProducto").value;
         const http=new XMLHttpRequest();
@@ -103,6 +104,7 @@
         http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         http.send("opcion=grabarNuevoProducto"
                + "&idGrupo="+idGrupo
+               + "&nombre="+nombre
                + "&descripcion="+descripcion
                + "&precio="+precio
 
@@ -139,7 +141,33 @@ function realizarCargaArchivo(idProducto)
 }
 
 
+function actualizarProducto(idProducto)
+{
+    // alert('funcionalidad en construccion');
+    var idGrupo =document.getElementById("idGrupo").value;
+        var nombre =document.getElementById("nombreProducto").value;
+        var descripcion =document.getElementById("descripcionProducto").value;
+        var precio =document.getElementById("precioProducto").value;
+        const http=new XMLHttpRequest();
+        const url = '../productos/productos.php';
+        http.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status ==200){
+                document.getElementById("modalProductosBody").innerHTML = this.responseText;
+            }
+        };
+        
+        http.open("POST",url);
+        http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        http.send("opcion=actualizarProducto"
+               + "&idProducto="+idProducto
+               + "&idGrupo="+idGrupo
+               + "&nombre="+nombre
+               + "&descripcion="+descripcion
+               + "&precio="+precio
 
+        );
+    
+}
 
 
 //  function pantallaAgregarProducto(idProducto)

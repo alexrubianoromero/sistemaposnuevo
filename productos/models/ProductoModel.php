@@ -31,8 +31,9 @@ class ProductoModel extends Conexion
     }
     public function grabarNuevoProducto($request)
     {
-        $sql = "insert into productos (idGrupo,descripcion,precio) 
+        $sql = "insert into productos (idGrupo,nombre,descripcion,precio) 
         values('".$request['idGrupo']."'
+        ,'".$request['nombre']."'
         ,'".$request['descripcion']."'
         ,'".$request['precio']."'
         ) "; 
@@ -48,6 +49,17 @@ class ProductoModel extends Conexion
            $consulta = mysql_query($sql,$this->connectMysql()); 
     }
 
+    public function actualizarProducto($request)
+    {
+        $sql ="update productos set  
+          idGrupo = '".$request['idGrupo']."'
+          ,nombre = '".$request['nombre']."'
+          ,descripcion = '".$request['descripcion']."'
+          ,precio = '".$request['precio']."'
+        where id = '".$request['idProducto']."'  ";
+        // die($sql);
+         $consulta = mysql_query($sql,$this->connectMysql()); 
+    }
 
 }
 

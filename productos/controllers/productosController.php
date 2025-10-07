@@ -55,6 +55,11 @@ class productosController
         {
             $this->realizarCargaArchivo($_REQUEST);
         }
+           if($_REQUEST['opcion']=='actualizarProducto')
+        {
+            $this->model->actualizarProducto($_REQUEST);
+            echo 'Producto actaualizado';
+        }
 
 
     }

@@ -35,17 +35,17 @@ class productoView
     public function mostrarProductos($productos)
     {
             // echo ' llego a menu opcionesview';
-            echo '<div class="row"style="padding:10px; ">'; 
+            echo '<div class="row "style="padding:10px; ">'; 
                 $ruta = '../productos/imagenes/';
                 foreach($productos  as $producto)
                     {
                     $rutaCompleta = $ruta.$producto['rutaImagen'];
                     echo '<div 
-                            class="col-lg-3 ms-2 mt-2 text-center" 
+                            class="col-lg-3 ms-2 mt-2 text-center h-80" 
                             style="border:1px solid black;padding:5px;border-radius:5px;"
                              onclick="agregarItemACuenta123456('.$producto['id'].');"
                          >'; 
-                        echo '<img style="max-width: 100%; " src="'.$rutaCompleta.'">';
+                        echo '<img class="h-90" style="max-width: 80%;;" src="'.$rutaCompleta.'">';
                         echo '<label class="fs-4">'.$producto['nombre'].' </label>';
                         echo '<label class="fs-2">'.$producto['precio'].'</label>';
                         // echo '<button 
@@ -114,7 +114,7 @@ class productoView
                     ?>
                      <div class="col">
                         <div class="card h-80">
-                            <img src="<?php   echo $rutaCompleta;  ?>" class="card-img-top" alt="Pizza">
+                            <img style="height: 200px;" src="<?php   echo $rutaCompleta;  ?>" class="card-img-top" alt="Pizza">
                             <div class="card-body">
                                 <h5 class="card-title"><?php   echo $producto['nombre'];  ?></h5>
                                 <p class="card-text"><?php   echo $producto['descripcion'];  ?></p>
@@ -122,8 +122,10 @@ class productoView
                             <div class="card-footer d-flex justify-content-between align-items-center">
                                 <h6 class="text-success mb-0"><?php   echo $producto['precio'];  ?></h6>
                                 <a  class="btn btn-primary"
-                                
-                                >Añadir</a>
+                                     data-bs-toggle="modal" data-bs-target="#modalProductos"
+                                     onclick="editarProducto('<?php echo $producto['id']; ?>');"
+
+                                >Editar</a>
 
                             </div>
                         </div>
@@ -134,7 +136,6 @@ class productoView
                 
          echo '</div>';
     }
-            
             
             // echo '<button
             // data-bs-toggle="modal" data-bs-target="#modalProductos"
@@ -173,6 +174,10 @@ class productoView
                <?php   $this->grupoView->mostrarSelectGrupos();      ?>
             </div>
             <div class="col-lg-4">
+                <label>Nombre:</label>
+                <input type="text" id="nombreProducto" class="form-control mt-2">
+            </div>
+            <div class="col-lg-4">
                 <label>Descripcion:</label>
                 <input type="text" id="descripcionProducto" class="form-control mt-2">
             </div>
@@ -187,13 +192,18 @@ class productoView
          </div>
          <?php
       }
+
       public function editarProducto($idProducto)
       {
          $producto = $this->model->traerProductoId($idProducto);
          ?>
          <div class="mt-3 row" >
             <div class="col-lg-4">
-               <?php   $this->grupoView->mostrarSelectGruposSelectActual($idProducto);      ?>
+               <?php   $this->grupoView->mostrarSelectGruposSelectActual($producto['idGrupo']);      ?>
+            </div>
+            <div class="col-lg-4">
+                <label>Nombre:</label>
+                <input type="text" id="nombreProducto" class="form-control mt-2" value ="<?php echo $producto['nombre'] ?>">
             </div>
             <div class="col-lg-4">
                 <label>Descripcion:</label>
@@ -205,7 +215,7 @@ class productoView
             </div>
 
             <div class="mt-3 " > 
-               <button class="btn btn-primary" onclick="actualizarProducto($idProducto);">Actualizar</button>
+               <button class="btn btn-primary" onclick="actualizarProducto('<?php echo $idProducto ; ?>');">Actualizar</button>
             </div>
          </div>
          <div class="mt-3 row" style="border:1px solid black;padding:10px;" >
