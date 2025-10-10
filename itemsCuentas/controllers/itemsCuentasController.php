@@ -49,6 +49,11 @@ class itemsCuentasController
             $this->view->listarItemsIdCuenta($items,$_REQUEST['idCuenta']);
 
         }
+        if($_REQUEST['opcion']=='formuCobroCuenta')
+        {
+            $this->view->formuCobroCuenta($_REQUEST['idCuenta']);
+
+        }
 
     }
 

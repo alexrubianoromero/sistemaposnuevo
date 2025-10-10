@@ -143,8 +143,8 @@ class productoView
             // class="btn btn-secondary">';
             // echo $producto['descripcion'];
             // echo'</button>';
-            public function modalProductos()
-            {
+    public function modalProductos()
+    {
                 ?>
             <div class="modal fade" id="modalProductos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
