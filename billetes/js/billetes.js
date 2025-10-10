@@ -7,7 +7,7 @@
         //  alert('click en sumar billete '+ totalItems);
          document.getElementById("valorPagado").value = nuevoValor;
          var devuelto = parseInt(totalItems)-parseInt(nuevoValor);
-         document.getElementById("valorDevuelto").value = nuevoValor;
+         document.getElementById("valorDevuelto").value = devuelto;
 
 
         // const http=new XMLHttpRequest();

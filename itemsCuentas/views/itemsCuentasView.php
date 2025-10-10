@@ -4,18 +4,21 @@ $ruta = dirname(dirname(dirname(__FILE__)));
 require_once($ruta.'/productos/models/ProductoModel.php');
 require_once($ruta.'/itemsCuentas/models/ItemCuentaModel.php');
 require_once($ruta.'/billetes/models/BilleteModel.php');
+require_once($ruta.'/calculadora/views/calculadoraView.php');
 
 class itemsCuentasView
 {
   protected $productoModel;
   protected $itemModel;
   protected $billeteModel;
+  protected $calculadoraView;
   
   public function __construct()
   {
       $this->productoModel = new ProductoModel();
       $this->itemModel = new ItemCuentaModel();
       $this->billeteModel = new BilleteModel();
+      $this->calculadoraView = new calculadoraView();
   }
 
 
@@ -107,8 +110,8 @@ class itemsCuentasView
               ?>
 
           </div>
-          <div class="row">
-                <div class="col-lg-1">
+          <div class="row fs-2">
+                <div class="col-lg-2">
                   <span>Cuenta:</span>
                   <label><?php  echo $idCuenta; ?></label>
                 </div>
@@ -118,15 +121,16 @@ class itemsCuentasView
                 </div>
                 <div class="col-lg-2">
                   <label>Pago:</label>
-                  <input class="form-control" type="text" id="valorPagado">
+                  <input class="form-control fs-2" type="text" id="valorPagado">
                 </div>
                 <div class="col-lg-2">
                   <label>Devolver:</label>
-                  <input class="form-control" type="text" id="valorDevuelto">
+                  <input class="form-control fs-2" type="text" id="valorDevuelto">
                 </div>
           </div>
           <div class="mt-2">
               calculadora 
+              <?php  $this->calculadoraView->mostrarCalculadora();?>
           </div>
 
         </div>
