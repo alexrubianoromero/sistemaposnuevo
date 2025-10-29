@@ -93,47 +93,68 @@ class itemsCuentasView
       $totalItems =  $this->itemModel->sumarItemsIdCuenta($idCuenta);
       $billetes =    $this->billeteModel->traerBilletes(); 
         ?>
-        <div class="mt-2">
-          <div class="mt-2 row">
-              <?php
-              foreach($billetes as $billete)
-              {
-                ?>
-                  <div class="col-lg-2 mt-2 me-1">
-                      <img  width="100px;"  
-                            src="<?php  echo $billete['rutaBillete'] ?>"
-                            onclick="sumarValorPagado(<?php echo $billete['valor'];  ?>);"    
-                        >
-                  </div>
-                <?php
-              }
-              ?>
+      <div class="row">
+          
 
-          </div>
-          <div class="row fs-2">
-                <div class="col-lg-2">
-                  <span>Cuenta:</span>
-                  <label><?php  echo $idCuenta; ?></label>
-                </div>
-                <div class="col-lg-2">
-                  <label>Valor:</label>
-                  <label id="totalItems"><?php  echo $totalItems; ?></label>
-                </div>
-                <div class="col-lg-2">
-                  <label>Pago:</label>
-                  <input class="form-control fs-2" type="text" id="valorPagado">
-                </div>
-                <div class="col-lg-2">
-                  <label>Devolver:</label>
-                  <input class="form-control fs-2" type="text" id="valorDevuelto">
-                </div>
-          </div>
-          <div class="mt-2">
-              calculadora 
-              <?php  $this->calculadoraView->mostrarCalculadora();?>
-          </div>
+            <div class="col-lg-9 row">
+                          
 
-        </div>
+                            <div class="col-lg-2  me-1 text-center">
+                              <span>Cuenta_No</span>
+                              <label class=" fs-3"><?php  echo $idCuenta; ?></label>
+                            </div>
+                              <div class="col-lg-3">
+                                <label>Valor:</label>
+                                <input class="form-control fs-3" id="totalItems"  value="<?php  echo $totalItems; ?>" onfocus="blur();">
+                              </div>
+                              <div class="col-lg-3">
+                                <label>Pago:</label>
+                                <input class="form-control fs-3" type="text" id="valorPagado" onkeyup="calculeDevolucion();">
+                              </div>
+                              <div class="col-lg-3">
+                                <label>Devolver:</label>
+                                <input class="form-control fs-3" type="text" id="valorDevuelto" onfocus="blur();">
+                              </div>
+
+                   
+                    <div class="">
+                      <?php  $this->calculadoraView->mostrarCalculadora();?>
+                    </div>
+             </div>
+
+               <div class="row col-lg-3">
+                    <div class="col-lg-12">
+                      <button 
+                            class="btn btn-secondary fs-3 w-100 btn-lg"   
+                            onclick="registrarVenta(<?php  echo $idCuenta; ?>);"
+                            >Registrar</button>
+                    </div>
+
+                    <div class="col-lg-3">
+                                  <?php
+                                  foreach($billetes as $billete)
+                                  {
+                                    ?>
+                                      <div class="col-lg-2  me-1 mt-3">
+                                          <img  width="130px;"  
+                                                src="<?php  echo $billete['rutaBillete'] ?>"
+                                                onclick="sumarValorPagado(<?php echo $billete['valor'];  ?>);"    
+                                            >
+                                      </div>
+                                    <?php
+                                  }
+                                  ?>
+
+                    </div>
+             </div>
+
+
+      </div>
+        <script>
+            function otroMensaje(){
+              alert('este es otro mensaje ');
+            }
+        </script>
 
         <?php
     }

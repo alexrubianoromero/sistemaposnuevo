@@ -71,6 +71,11 @@ class dashboardView{
                 <?php   $this->modalProducto();  ?>
             </body>
             </html>
+            <script>
+                function otroMensaje(){
+                    alert('este es otro mensaje ');
+                }
+            </script>
             <script src="../dashboard/js/dashboard.js"></script>
             <script src="../grupos/js/grupos.js"></script>
             <script src="../productos/js/productos.js"></script>
@@ -79,6 +84,8 @@ class dashboardView{
             <script src="../cuentas/js/cuentas.js"></script>
             <script src="../itemsCuentas/js/itemsCuentas.js"></script>
             <script src="../billetes/js/billetes.js"></script>
+            <script src="../calculadora/js/calculadora.js"></script>
+            <script src="../ventas/js/ventas.js"></script>
         <?php
     }
 

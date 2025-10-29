@@ -1,3 +1,13 @@
+    function calculeDevolucion()
+    {
+          var totalItems =  document.getElementById("totalItems").value;
+          var valorPagado =  document.getElementById("valorPagado").value;
+          //   var valorDevuelto =  document.getElementById("valorDevuelto").value;
+          var devuelto = parseInt(totalItems)-parseInt(valorPagado);
+        //   alert(totalItems +'-'+ valorPagado+'-'+ devuelto);
+         document.getElementById("valorDevuelto").value = devuelto;
+    }
+    
     function agregarItemACuenta123456(idProducto)
     {
         // alert('idproducto'+idProducto); 
@@ -51,7 +61,9 @@
                 document.getElementById("idCuentaActual").value= idCuenta;
                 // document.getElementById("divItemsCuenta").innerHTML = '';
                 document.getElementById("modalCuentasBody").innerHTML = this.responseText;
-                 document.getElementById("valorPagado").value=0;
+                document.getElementById("valorPagado").value='';
+                colocarFocoValorPAgado();
+                
 
                 // document.getElementById("cantidad").focus();
             }
@@ -63,9 +75,13 @@
         + "&idCuenta="+idCuenta
         // + "&tipoMov=1"
         );
+        colocarFocoValorPAgado();
     }
 
-    
+    function colocarFocoValorPAgado()
+    {
+           document.getElementById("valorPagado").focus();
+    }
 
     function eliminarItemCuenta(idItem)
     {

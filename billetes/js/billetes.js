@@ -1,7 +1,7 @@
    function sumarValorPagado(valor)
     {
 
-         var totalItems =  document.getElementById("totalItems").textContent;
+         var totalItems =  document.getElementById("totalItems").value;
          var valorPagado =  document.getElementById("valorPagado").value;
           var nuevoValor = parseInt(valorPagado) + parseInt(valor);
         //  alert('click en sumar billete '+ totalItems);
@@ -28,3 +28,5 @@
         // // + "&tipoMov=1"
         // );
     }
+
+   

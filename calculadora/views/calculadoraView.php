@@ -14,7 +14,7 @@ class calculadoraView
             <title>Document</title>
             <style>
                 .calculator {
-                    width: 300px;
+                    width: 500px;
                     margin: 50px auto;
                     border: 1px solid #ccc;
                     padding: 10px;
@@ -39,7 +39,7 @@ class calculadoraView
                 }
 
                 .keys button {
-                    padding: 15px;
+                    padding: 10px;
                     font-size: 1.2em;
                     border: none;
                     background-color: #e0e0e0;
@@ -54,6 +54,7 @@ class calculadoraView
             </style>
         </head>
         <body>
+            <!-- <button onclick="mostrarMensaje();">mmensaje</button> -->
             <div class="calculator">
                 <input type="text" id="display" disabled>
                 <div class="keys">
@@ -81,7 +82,10 @@ class calculadoraView
             </div>
         </body>
         </html>
-        <script src="../js/calculadora.js"></script>
+        <!-- <script src="../calculadora/js/calculadora.js"></script> -->
+       <script>
+     
+       </script>
         <?php
     }
 
