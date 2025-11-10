@@ -5,6 +5,7 @@ require_once($ruta.'/productos/models/ProductoModel.php');
 require_once($ruta.'/itemsCuentas/models/ItemCuentaModel.php');
 require_once($ruta.'/billetes/models/BilleteModel.php');
 require_once($ruta.'/calculadora/views/calculadoraView.php');
+require_once($ruta.'/formasdepago/views/formasDePagoView.php');
 
 class itemsCuentasView
 {
@@ -12,6 +13,7 @@ class itemsCuentasView
   protected $itemModel;
   protected $billeteModel;
   protected $calculadoraView;
+  protected $formasPagoView;
   
   public function __construct()
   {
@@ -19,6 +21,7 @@ class itemsCuentasView
       $this->itemModel = new ItemCuentaModel();
       $this->billeteModel = new BilleteModel();
       $this->calculadoraView = new calculadoraView();
+      $this->formasPagoView = new formasDePagoView();
   }
 
 
@@ -123,6 +126,9 @@ class itemsCuentasView
              </div>
 
                <div class="row col-lg-3">
+                    <div>
+                      <?php  $this->formasPagoView->mostrarFormasDePago();   ?>
+                    </div>
                     <div class="col-lg-12">
                       <button 
                             class="btn btn-secondary fs-3 w-100 btn-lg"   
