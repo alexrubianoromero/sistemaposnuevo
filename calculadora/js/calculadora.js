@@ -39,3 +39,27 @@ function appendNumber(number) {
             display.value = 'Error';
         }
     }
+
+
+     function mostrarCalculadora()
+    {
+        // alert('enviola forma de pago ');
+        // // alert('idproducto'+idProducto); 
+        // //  var idFormapago =  document.getElementById("idCuentaActual").value;
+        const http=new XMLHttpRequest();
+        const url = '../calculadora/calculadora.php';
+        http.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status ==200){
+                document.getElementById("div_de_calculadora").innerHTML = this.responseText;
+                // document.getElementById("cantidad").focus();
+            }
+        };
+
+        http.open("POST",url);
+        http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        http.send("opcion=mostrarCalculadora"
+        // + "&idProducto="+idProducto
+        // + "&idCuenta="+idCuenta
+        // + "&tipoMov=1"
+        );
+    }

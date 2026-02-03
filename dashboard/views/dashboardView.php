@@ -86,6 +86,7 @@ class dashboardView{
             <script src="../billetes/js/billetes.js"></script>
             <script src="../calculadora/js/calculadora.js"></script>
             <script src="../ventas/js/ventas.js"></script>
+            <script src="../formasdepago/js/formasDePago.js"></script>
         <?php
     }
 

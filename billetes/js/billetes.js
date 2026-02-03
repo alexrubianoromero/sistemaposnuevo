@@ -3,10 +3,22 @@
 
          var totalItems =  document.getElementById("totalItems").value;
          var valorPagado =  document.getElementById("valorPagado").value;
-          var nuevoValor = parseInt(valorPagado) + parseInt(valor);
+         if(valorPagado==''){valorPagado=0;}
+         var nuevoValor = parseInt(valorPagado) + parseInt(valor);
+
+          var saldo = parseInt(totalItems)-parseInt(nuevoValor);
+         if(valorPagado==''){valorPagado=0;}
         //  alert('click en sumar billete '+ totalItems);
          document.getElementById("valorPagado").value = nuevoValor;
-         var devuelto = parseInt(totalItems)-parseInt(nuevoValor);
+        //  var devuelto = parseInt(totalItems)-parseInt(nuevoValor);
+
+          if(saldo<0)
+          {   saldo = 0;
+              var devuelto = -(parseInt(totalItems)-parseInt(nuevoValor));
+          }else{
+            var devuelto =0;
+          }
+         document.getElementById("saldo").value = saldo;
          document.getElementById("valorDevuelto").value = devuelto;
 
 

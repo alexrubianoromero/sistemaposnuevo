@@ -106,22 +106,28 @@ class itemsCuentasView
                               <span>Cuenta_No</span>
                               <label class=" fs-3"><?php  echo $idCuenta; ?></label>
                             </div>
-                              <div class="col-lg-3">
+                              <div class="col-lg-2">
                                 <label>Valor:</label>
                                 <input class="form-control fs-3" id="totalItems"  value="<?php  echo $totalItems; ?>" onfocus="blur();">
                               </div>
-                              <div class="col-lg-3">
+                              <div class="col-lg-2">
                                 <label>Pago:</label>
                                 <input class="form-control fs-3" type="text" id="valorPagado" onkeyup="calculeDevolucion();">
                               </div>
-                              <div class="col-lg-3">
+                              <div class="col-lg-2">
+                                <label>Saldo:</label>
+                                <input class="form-control fs-3" type="text" id="saldo" ">
+                              </div>
+                              <div class="col-lg-2">
                                 <label>Devolver:</label>
                                 <input class="form-control fs-3" type="text" id="valorDevuelto" onfocus="blur();">
                               </div>
 
                    
-                    <div class="">
-                      <?php  $this->calculadoraView->mostrarCalculadora();?>
+                    <div id="div_de_calculadora"    class="">
+                      <?php  
+                          // $this->calculadoraView->mostrarCalculadora();  
+                        ?>
                     </div>
              </div>
 

@@ -5,6 +5,7 @@ class calculadoraView
 
     public function mostrarCalculadora()
     {
+        // die('llego a pantalla mostrar calculadora');
         ?>
         <!DOCTYPE html>
         <html lang="en">

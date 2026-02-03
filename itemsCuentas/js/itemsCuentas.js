@@ -3,8 +3,16 @@
           var totalItems =  document.getElementById("totalItems").value;
           var valorPagado =  document.getElementById("valorPagado").value;
           //   var valorDevuelto =  document.getElementById("valorDevuelto").value;
-          var devuelto = parseInt(totalItems)-parseInt(valorPagado);
+          var saldo = parseInt(totalItems)-parseInt(valorPagado);
+          if(valorPagado==''){saldo=0;}
+          if(saldo<0)
+          {   saldo = 0;
+              var devuelto = -(parseInt(totalItems)-parseInt(valorPagado));
+          }else{
+            var devuelto =0;
+          }
         //   alert(totalItems +'-'+ valorPagado+'-'+ devuelto);
+         document.getElementById("saldo").value = saldo;
          document.getElementById("valorDevuelto").value = devuelto;
     }
     
@@ -61,7 +69,7 @@
                 document.getElementById("idCuentaActual").value= idCuenta;
                 // document.getElementById("divItemsCuenta").innerHTML = '';
                 document.getElementById("modalCuentasBody").innerHTML = this.responseText;
-                document.getElementById("valorPagado").value='';
+                document.getElementById("valorPagado").value='0';
                 colocarFocoValorPAgado();
                 
 
@@ -75,7 +83,9 @@
         + "&idCuenta="+idCuenta
         // + "&tipoMov=1"
         );
-        colocarFocoValorPAgado();
+        setTimeout(() => {
+            colocarFocoValorPAgado();
+        }, 300);
     }
 
     function colocarFocoValorPAgado()

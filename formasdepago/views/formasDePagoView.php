@@ -20,7 +20,7 @@ class formasDePagoView
     $formasPago =  $this->model->traerFormasPago();
     ?>
     <label>Forma de Pago:</label>
-    <select id="idFormaPago" class="form-control">
+    <select id="idFormaPago" name="idFormaPago" class="form-control" onchange="enviarFormaDePago(this.value);">
         <option value="">Seleccione...</option>
         <?php 
         foreach($formasPago as $formaPago)
