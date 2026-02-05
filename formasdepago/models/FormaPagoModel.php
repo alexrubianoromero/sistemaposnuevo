@@ -12,6 +12,13 @@ class FormaPagoModel extends Conexion
         $grupos = $this->get_table_assoc($consulta);
         return $grupos;
     }
+    public function traerFormaPagoId($id)
+    {
+        $sql = "select * from formasDePago where id =  '".$id."'   ";
+        $consulta = mysql_query($sql,$this->connectMysql()); 
+        $grupos = mysql_fetch_assoc($consulta);
+        return $grupos;
+    }
     
     // public function registrarVenta($request)
     // {

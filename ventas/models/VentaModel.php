@@ -7,10 +7,18 @@ class VentaModel extends Conexion
 {
     public function traerVentas()
     {
-        $sql = "select * from ventas ";
+        $sql = "select * from ventas order by id desc";
         $consulta = mysql_query($sql,$this->connectMysql()); 
         $grupos = $this->get_table_assoc($consulta);
         return $grupos;
+    }
+    public function traerVentaId($idVenta)
+    {
+        $sql = "select * from ventas where id = '".$idVenta."'   ";
+        // die($sql);
+        $consulta = mysql_query($sql,$this->connectMysql()); 
+        $info = mysql_fetch_assoc($consulta);
+        return $info;
     }
     
     public function registrarVenta($request)

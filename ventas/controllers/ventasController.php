@@ -2,6 +2,7 @@
 $ruta = dirname(dirname(dirname(__FILE__)));
 // // die($ruta); 
 require_once($ruta.'/ventas/models/VentaModel.php');
+require_once($ruta.'/ventas/views/ventasView.php');
 // require_once($ruta.'/itemsCuentas/models/ItemCuentaModel.php');
 // require_once($ruta.'/billetes/models/BilleteModel.php');
 // require_once($ruta.'/calculadora/views/calculadoraView.php');
@@ -9,6 +10,7 @@ require_once($ruta.'/ventas/models/VentaModel.php');
 class ventasController
 {
   protected $model;
+  protected $view;
 //   protected $itemModel;
 //   protected $billeteModel;
 //   protected $calculadoraView;
@@ -17,12 +19,18 @@ class ventasController
   {
 
       $this->model = new VentaModel();
+      $this->view = new ventasView();
     //   $this->itemModel = new ItemCuentaModel();
     //   $this->billeteModel = new BilleteModel();
     //   $this->calculadoraView = new calculadoraView();
       if($_REQUEST['opcion']=='registrarVenta')
         {
             $this->registrarVenta($_REQUEST);
+        }
+      if($_REQUEST['opcion']=='listarVentas')
+        {
+            $ventas = $this->model->traerVentas();
+            $this->view->listarVentas($ventas);
         }
   }
 

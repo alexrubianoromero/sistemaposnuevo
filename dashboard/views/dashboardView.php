@@ -160,6 +160,10 @@ class dashboardView{
                         <span class="icon icon-opciones">C</span>
                         Cuentas
                     </button>
+                    <button class="btn btn-secondary btn-sm me-2" onclick="listarVentas();">
+                        <span class="icon icon-opciones">C</span>
+                        Ventas
+                    </button>
                 </div>
 
             </body>
