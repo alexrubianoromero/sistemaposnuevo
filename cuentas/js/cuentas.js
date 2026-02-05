@@ -41,6 +41,9 @@
 
     // alert ('crear nueva cuenta');
     // alert('idgrupo de producto'+idGrupo);
+    var valida= confirm('esta seguro de crear una nueva cuenta?');
+    if(valida==1)
+    {
         const http=new XMLHttpRequest();
         const url = '../cuentas/cuentas.php';
         http.onreadystatechange = function(){
@@ -60,7 +63,7 @@
         // + "&idSuc="+idSuc
         // + "&tipoMov=2"
         );
-
+    }
 }
 
 
